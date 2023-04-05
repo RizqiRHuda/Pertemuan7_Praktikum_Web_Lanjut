@@ -52,4 +52,7 @@
 
     @endforeach
 </table>
+<div class="mx-auto pb-18 w-4/5">
+    {{$mahasiswas->links()}}
+</div>
 @endsection
