@@ -6,7 +6,7 @@
             <h2>JURUSAN TEKNOLOGI INFORMASI-POLITEKNIK NEGERI MALANG</h2>
         </div>
         <div class="float-right my-2">
-            <a class="btn btnsuccess" href="{{ route('mahasiswas.create') }}"> Input Mahasiswa</a>
+            <a class="btn btnsuccess" href="{{ route('mahasiswas.create') }}"> Input Mahasiswa</a>
         </div>
     </div>
 </div>
@@ -24,6 +24,8 @@
         <th>Kelas</th>
         <th>Jurusan</th>
         <th>No_Handphone</th>
+        <th>Email</th>
+        <th>Tanggal Lahir</th>
         <th width="280px">Action</th>
     </tr>
     @foreach ($mahasiswas as $Mahasiswa)
@@ -34,6 +36,8 @@
         <td>{{ $Mahasiswa->kelas }}</td>
         <td>{{ $Mahasiswa->jurusan }}</td>
         <td>{{ $Mahasiswa->no_hp }}</td>
+        <td>{{ $Mahasiswa->email }}</td>
+        <td>{{ $Mahasiswa->tgl_lahir }}</td>
         <td>
             <form action="{{ route('mahasiswas.destroy',$Mahasiswa->nim) }}" method="POST">
 
@@ -45,6 +49,7 @@
             </form>
         </td>
     </tr>
+
     @endforeach
 </table>
 @endsection

@@ -19,6 +19,9 @@ return new class extends Migration
             $table->string('kelas', 10)->nullable();
             $table->string('jurusan', 50)->nullable();
             $table->string('no_hp', 20)->nullable();
+            // $table->string('email', 30)->nullable();
+            // $table->date('tgl_lahir')->nullable();
+
         });
     }
 

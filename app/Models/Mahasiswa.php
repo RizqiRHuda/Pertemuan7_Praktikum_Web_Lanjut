@@ -10,18 +10,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Mahasiswa extends Model
 {
-    protected $table = "mahasiswas";
+    use HasFactory;
+    protected $table = "mahasiswas"; 
     public $timestamps = false;
-    protected $primaryKey = 'nim';
+    protected $primaryKey = 'nim'; 
 
 
- protected $fillable = [
- 'nim',
- 'nama',
- 'kelas',
- 'jurusan',
- 'no_hp',
- ];
-
+    protected $fillable = [
+        'nim',
+        'nama',
+        'kelas',
+        'jurusan',
+        'no_hp',
+        'email',
+        'tgl_lahir'
+    ];
 };
-
