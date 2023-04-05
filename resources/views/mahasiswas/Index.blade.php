@@ -6,7 +6,11 @@
             <h2>JURUSAN TEKNOLOGI INFORMASI-POLITEKNIK NEGERI MALANG</h2>
         </div>
         <div class="float-right my-2">
-            <a class="btn btnsuccess" href="{{ route('mahasiswas.create') }}"> Input Mahasiswa</a>
+        <form action="{{ route('mahasiswas.index') }}" method="GET" class="d-flex">
+                <input type="text" class="form-control" name="nama" placeholder="Nama Mahasiswa" value="{{request('nama')}}" required>
+                <button type="submit" class="btn btn-info">Search</button>
+            </form>
+            <a class="btn btn-primary" href="{{ route('mahasiswas.create') }}"> Input Mahasiswa</a>
         </div>
     </div>
 </div>
