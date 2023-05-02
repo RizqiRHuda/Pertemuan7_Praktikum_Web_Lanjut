@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Mahasiswa;
 use Illuminate\Http\Request;
 use App\Models\Kelas;
+use App\Models\MataKuliah;
+use App\Models\MahasiswaMataKuliah;
 use Illuminate\Support\Facades\Auth;
 
 class MahasiswaController extends Controller
@@ -176,6 +178,13 @@ class MahasiswaController extends Controller
         //fungsi eloquent untuk menghapus data
         Mahasiswa::find($nim)->delete();
         return redirect()->route('mahasiswas.index') -> with('success', 'Mahasiswa Berhasil Dihapus');
+    }
+
+    public function nilai($nim)
+    {
+        $Mahasiswa = Mahasiswa::find($nim);
+        return view('mahasiswas.nilai', compact('Mahasiswa'));
+
     }
 
     // public function search(Request $request)

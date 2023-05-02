@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\Mahasiswa as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model; //Model Eloquent
+use App\Models\Kelas;
+use App\Models\Mahasiswa_Matakuliah;
 
 class Mahasiswa extends Model
 {
@@ -27,8 +29,10 @@ class Mahasiswa extends Model
         'tgl_lahir'
     ];
 
-    public function kelas()
-    {
-        return $this->belongsTo(kelas::class);
+    public function kelas(){
+        return $this->belongsTo(Kelas::class);
+    }
+    public function mataKuliah() {
+        return $this->belongsToMany(MataKuliah::class, "mahasiswa_matakuliah", "mahasiswa_id", "matakuliah_id")->withPivot('nilai');
     }
 };
