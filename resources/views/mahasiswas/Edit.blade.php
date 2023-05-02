@@ -26,32 +26,36 @@
                     @method('PUT')
                     <div class="form-group">
                         <label for="nim">Nim</label>
-                        <input type="text" name="nim" class="formcontrol" id="nim" value="{{ $Mahasiswa->nim }}" ariadescribedby="Nim">
+                        <input type="text" name="nim" class="form-control" id="nim" value="{{ $Mahasiswa->nim }}" ariadescribedby="Nim">
                     </div>
                     <div class="form-group">
                         <label for="nama">Nama</label>
-                        <input type="text" name="nama" class="formcontrol" id="nama" value="{{ $Mahasiswa->nama }}" ariadescribedby="Nama">
+                        <input type="text" name="nama" class="form-control" id="nama" value="{{ $Mahasiswa->nama }}" ariadescribedby="Nama">
                     </div>
                     <div class="form-group">
-                        <label for="kelas">Kelas</label>
-                        <input type="kelas" name="kelas" class="formcontrol" id="kelas" value="{{ $Mahasiswa->kelas }}" ariadescribedby="Kelas">
+                    <label for="kelas">Kelas</label>
+                        <select name="kelas"  class="form-control">
+                            @foreach ($kelas as $Kelas)
+                            <option value="{{$Kelas->id}}">{{$Kelas->nama_kelas}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="jurusan">Jurusan</label>
-                        <input type="jurusan" name="jurusan" class="formcontrol" id="jurusan" value="{{ $Mahasiswa->jurusan }}" ariadescribedby="Jurusan">
+                        <input type="jurusan" name="jurusan" class="form-control" id="jurusan" value="{{ $Mahasiswa->jurusan }}" ariadescribedby="Jurusan">
                     </div>
                     <div class="form-group">
                         <label for="no_hp">No_Handphone</label>
 
-                        <input type="no_hp" name="no_hp" class="formcontrol" id="no_hp" value="{{ $Mahasiswa->no_hp }}" ariadescribedby="No_Handphone">
+                        <input type="no_hp" name="no_hp" class="form-control" id="no_hp" value="{{ $Mahasiswa->no_hp }}" ariadescribedby="No_Handphone">
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" name="email" class="formcontrol" id="email" aria-describedby="email">
+                        <input type="email" name="email" class="form-control" id="email" aria-describedby="email">
                     </div>
                     <div class="form-group">
                         <label for="tgl_lahir">Tanggal Lahir</label>
-                        <input type="date" name="tgl_lahir" class="formcontrol" id="tgl_lahir" value="{{ $Mahasiswa->tgl_lahir }}" ariadescribedby="Tanggal_Lahir">
+                        <input type="date" name="tgl_lahir" class="form-control" id="tgl_lahir" value="{{ $Mahasiswa->tgl_lahir }}" ariadescribedby="Tanggal_Lahir">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -59,4 +63,4 @@
         </div>
     </div>
 </div>
-@endsection
+@endsection=
