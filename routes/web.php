@@ -23,7 +23,7 @@ Route::get('/', function () {
 });
 
 Route::get('mahasiswas/nilai/{nim}', [MahasiswaController::class, 'nilai']);
-
+Route::get('/mahasiswas/cetak_pdf/{nim}', [MahasiswaController::class, 'cetak_pdf']);
 Route::resource('mahasiswas', MahasiswaController::class);
 Route::get('/articles/cetak_pdf', [ArticleController::class, 'cetak_pdf']);
 Route::resource('articles', ArticleController::class);

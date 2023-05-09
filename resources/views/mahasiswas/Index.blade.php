@@ -32,18 +32,20 @@
     <tr>
         <th>Nim</th>
         <th>Nama</th>
+        <th>Foto</th>
         <th>Kelas</th>
         <th>Jurusan</th>
         <th>No_Handphone</th>
         <th>Email</th>
         <th>Tanggal Lahir</th>
-        <th width="320px">Action</th>
+        <th width="330px">Action</th>
     </tr>
     @foreach ($mahasiswas as $Mahasiswa)
     <tr>
 
         <td>{{ $Mahasiswa->nim }}</td>
         <td>{{ $Mahasiswa->nama }}</td>
+        <td style=""><img src="{{asset('storage/'.$Mahasiswa->foto)}}" alt="foto profile" style="height: 100px; width: 100px; overflow: hidden; object-fit: cover;"></td>
         <td>{{ $Mahasiswa->kelas->nama_kelas }}</td>
         
         <td>{{ $Mahasiswa->jurusan }}</td>
@@ -51,7 +53,7 @@
         <td>{{ $Mahasiswa->email }}</td>
         <td>{{ $Mahasiswa->tgl_lahir }}</td>
         <td>
-            <form action="{{ route('mahasiswas.destroy',$Mahasiswa->nim) }}" method="POST">
+            <form action="{{ route('mahasiswas.destroy',$Mahasiswa->nim) }}" method="POST" class="d-flex mb-auto">
 
                 <a class="btn btn-info" href="{{ route('mahasiswas.show',$Mahasiswa->nim) }}">Show</a>
                 <a class="btn btn-primary" href="{{ route('mahasiswas.edit',$Mahasiswa->nim) }}">Edit</a>
