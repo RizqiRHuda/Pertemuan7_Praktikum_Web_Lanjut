@@ -19,22 +19,22 @@ class MahasiswaMataKuliahSeeder extends Seeder
             [
                 'mahasiswa_id' => 2141720264,
                 'matakuliah_id' => 1,
-                'nilai' => 82,
+                'nilai' => 88,
             ],
             [
                 'mahasiswa_id' => 2141720264,
                 'matakuliah_id' => 2,
-                'nilai' => 90,
+                'nilai' => 91,
             ],
             [
                 'mahasiswa_id' => 2141720264,
                 'matakuliah_id' => 3,
-                'nilai' => 79,
+                'nilai' => 80,
             ],
             [
                 'mahasiswa_id' => 2141720264,
                 'matakuliah_id' => 4,
-                'nilai' => 87,
+                'nilai' => 85,
             ],
         ];
 
