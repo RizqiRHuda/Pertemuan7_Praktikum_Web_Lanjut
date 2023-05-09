@@ -26,4 +26,4 @@ Route::get('mahasiswas/nilai/{nim}', [MahasiswaController::class, 'nilai']);
 
 Route::resource('mahasiswas', MahasiswaController::class);
 Route::resource('articles', ArticleController::class);
-Route::resource('articles', ArticleController::class);
+
